@@ -10,6 +10,8 @@ const Home = () => {
   return (
   <div>
     {/* <ProductCard /> */}
+    <ProductToolbar />
+    <ShopBreadcrumb/>
     <Hero/>
     <Category />
     <Featured/>
@@ -23,9 +25,17 @@ const Home = () => {
 export default Home
 
 
-import { CheckCircle, Headphones, Package, ShieldCheck, Trophy } from "lucide-react";
+import { Headphones, Package, ShieldCheck, Trophy } from "lucide-react";
+import ShopBreadcrumb from '@/components/Hero2'
+import ProductToolbar from '@/components/Filter'
 
-const FeatureCard = ({ icon: Icon, title, description }) => {
+interface FeatureProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureProps> = ({ icon: Icon, title, description }) => {
   return (
     <div className="flex items-center space-x-3">
       <Icon className="w-8 h-8 text-black" />
@@ -37,8 +47,8 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
   );
 };
 
-function Features() {
-  const features = [
+const Features: React.FC = () => {
+  const features: FeatureProps[] = [
     { icon: Trophy, title: "High Quality", description: "Crafted from top materials" },
     { icon: ShieldCheck, title: "Warranty Protection", description: "Over 2 years" },
     { icon: Package, title: "Free Shipping", description: "Order over $150" },
@@ -54,4 +64,6 @@ function Features() {
       </div>
     </div>
   );
-}
+};
+
+
