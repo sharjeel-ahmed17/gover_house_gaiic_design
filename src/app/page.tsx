@@ -10,6 +10,7 @@ const Home = () => {
   return (
   <div>
     {/* <ProductCard /> */}
+    <ProductDetails />
     <ProductToolbar />
     <ShopBreadcrumb/>
     <Hero/>
@@ -28,6 +29,7 @@ export default Home
 import { Headphones, Package, ShieldCheck, Trophy } from "lucide-react";
 import ShopBreadcrumb from '@/components/Hero2'
 import ProductToolbar from '@/components/Filter'
+import ProductDetails from '@/components/PrtoductDetails'
 
 interface FeatureProps {
   icon: React.ElementType;
